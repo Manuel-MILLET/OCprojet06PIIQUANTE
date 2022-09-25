@@ -1,6 +1,6 @@
 /* Projet n°6 "PIIQUANTE"
 *  Cours OpenClassrooms ""
-*  par Manuel MILLET le 25 septembre 2022 à 20h00
+*  par Manuel MILLET le 25 septembre 2022 à 21h00
 */
 // Initialisation des constantes
 const express = require('express');
@@ -15,7 +15,7 @@ app.use(express.json());
 //Routes
 app.post("/api/auth/signup", (req, res) => {
     console.log('Signup request:', req.body);
-    res.send("Utilisateur enregistré !");// à tester avec la méthode res.end
+    res.send("Utilisateur enregistré !");// à tester avec la méthode res.end 
 });
 app.get('/', (req, res) => {
     res.send('SERVER OK !!');// à tester avec la méthode .end
