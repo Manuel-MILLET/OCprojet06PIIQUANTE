@@ -15,7 +15,7 @@ app.use(express.json());
 //Routes
 app.post("/api/auth/signup", (req, res) => {
     console.log('Signup request:', req.body);
-    res.send("Utilisateur enregistré !");// à tester avec la méthode .end
+    res.send("Utilisateur enregistré !");// à tester avec la méthode res.end
 });
 app.get('/', (req, res) => {
     res.send('SERVER OK !!');// à tester avec la méthode .end
