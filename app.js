@@ -1,11 +1,11 @@
  /* Projet n°6 "PIIQUANTE"
 *  OpenClassrooms
-*  par Manuel MILLET le 03 octobre 2022 à 20h00
+*  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier app.js
 */
 const express = require('express');
 const app = express();
-const stuffRoutes = require('./routes/stuff');
+const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
 const mongoose = require('mongoose');// OK
@@ -16,7 +16,6 @@ mongoose.connect('mongodb+srv://manuel:manu3409@cluster0.iwisneb.mongodb.net/myF
   .then(() => console.log('La connexion à MongoDB a réussie !'))
   .catch(() => console.log('La connexion à MongoDB a échouée !'));
 
-app.use(express.json());
 // **** CORS headers
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,7 +24,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/stuff', stuffRoutes);
+app.use(express.json());
+
+app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

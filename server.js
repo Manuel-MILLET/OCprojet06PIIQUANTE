@@ -1,9 +1,9 @@
  /* Projet n°6 "PIIQUANTE"
 *  OpenClassrooms
-*  par Manuel MILLET le 03 octobre 2022 à 20h00
+*  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier server.js
 */
-console.log('BACKEND in service !!!!');
+console.log('Server BACKEND in service !!!!');
 const http = require('http');// import du package 'HTTP' natif de Node 
 const app = require('./app');
 //la fonction normalizePort renvoie un port valide, 
@@ -34,11 +34,11 @@ const errorHandler = error => {
   const bind = typeof address === 'string' ? 'pipe ' + address : 'port: ' + port;
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges.');
+      console.error(bind + 'Requires elevated privileges.');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use.');
+      console.error(bind + 'Is already in use.');
       process.exit(1);
       break;
     default:

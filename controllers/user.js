@@ -1,5 +1,5 @@
  /* Projet n°6 cours OpenClassrooms "PIIQUANTE"
-*  par Manuel MILLET le 03 octobre 2022 à 20h00
+*  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier controllers/users.js
 */
 const bcrypt = require('bcrypt');
@@ -31,7 +31,7 @@ exports.login = (req, res, next) => {
             .then(valid => {
                 if (!valid) {
                     console.log('err 401 ctrl-user ligne 34');
-                    return res.status(401).json({ message: 'Paire login/mot de passe incorrecte' });
+                    return res.status(401).json({ message: 'Bad password or login User not singin:' });
                 } else {
                 res.status(200).json({
                     userId: user._id,
