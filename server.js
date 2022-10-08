@@ -3,7 +3,6 @@
 *  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier server.js
 */
-console.log('Server BACKEND in service !!!!');
 const http = require('http');// import du package 'HTTP' natif de Node 
 const app = require('./app');
 //la fonction normalizePort renvoie un port valide, 
@@ -18,9 +17,9 @@ const normalizePort = val => {
     }
     return false;
   };
+
 //la fonction normalizePort renvoie un port valide
 const port = normalizePort(process.env.PORT || '3000');
-console.log('Server listening on port : ',port);
 app.set('port', port);
 
 //la fonction errorHandler recherche les différentes erreurs
@@ -38,7 +37,7 @@ const errorHandler = error => {
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + 'Is already in use.');
+      console.error(bind + 'Server is already in use.');
       process.exit(1);
       break;
     default:
@@ -51,8 +50,8 @@ server.on('error', errorHandler);
 server.on('listening', () => {
   const address = server.address();
   const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
-  console.log('Listening on ' + bind);
 });
 
-server.listen(port);//Le server backend écoute le port 3000
+//Le server backend écoute le port 3000
+server.listen(port);
 // Fin du fichier server.js

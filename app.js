@@ -8,13 +8,13 @@ const app = express();
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
-const mongoose = require('mongoose');// OK
+const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://manuel:manu3409@cluster0.iwisneb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
-  .then(() => console.log('La connexion à MongoDB a réussie !'))
-  .catch(() => console.log('La connexion à MongoDB a échouée !'));
+  .then(() => console.log('La connexion à MongoDB a réussi !'))
+  .catch(() => console.log('La connexion à MongoDB a échoué !'));
 
 // **** CORS headers
 app.use((req, res, next) => {

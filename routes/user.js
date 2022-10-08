@@ -7,9 +7,9 @@ const express = require('express');
 const router = express.Router();
 
 const userCtrl = require('../controllers/user');
-// Routes
-router.post('/signup', userCtrl.signup);
-router.post('/login', userCtrl.login);
+// Routes POST pour les utilisateurs
+router.post('/signup', userCtrl.signup);// Inscription d'un utilisateur dans la base de donnée
+router.post('/login', userCtrl.login);// Connexion d'un utilisateur dans la base de donnée
 // Exportation de l'application
 module.exports = router;
 //fin
