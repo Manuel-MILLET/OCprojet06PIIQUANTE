@@ -5,6 +5,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const secretString = process.env.DB_SECRETSTRING;
 
 // Inscription d'un utilisateur dans la base de donnée
 exports.signup = (req, res, next) => {
@@ -37,7 +38,7 @@ exports.login = (req, res, next) => {
                                 userId: user._id,
                                 token: jwt.sign(
                                     { userId: user._id},
-                                    'RANDOM_TOKEN_SECRET',
+                                    secretString,
                                     { expiresIn: '24h' }
                                  )  
                             });

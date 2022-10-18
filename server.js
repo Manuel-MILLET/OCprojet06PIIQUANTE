@@ -3,6 +3,9 @@
 *  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier server.js
 */
+
+// initialisation des constantes
+require('dotenv').config();// Pour l'utilisation de variable d'environement dans le fichier .env
 const http = require('http');// import du package 'HTTP' natif de Node 
 const app = require('./app');
 //la fonction normalizePort renvoie un port valide, 

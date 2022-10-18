@@ -3,14 +3,22 @@
 *  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier app.js
 */
+
+//initialisation des constantes
 const express = require('express');
 const app = express();
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
 const mongoose = require('mongoose');
+// Initialisatiion des constantes d'environement UTILISATEUR enregistrées dans le fichier  .env
+const userNameForMongodb = process.env.DB_USERNAME;
+const userPwsForMongodb = process.env.DB_USERPASSWORD;
+const userHostForMongodb = process.env.DB_USERDATABASEHOST;
+const userDataBaseName = process.env.DB_USERDATABASENAME;
+const test = 'mongodb+srv://' + userNameForMongodb + ':' + userPwsForMongodb + '@' + userHostForMongodb + userDataBaseName + '?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb+srv://manuel:manu3409@cluster0.iwisneb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://' + userNameForMongodb + ':' + userPwsForMongodb + '@' + userHostForMongodb + userDataBaseName + '?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('La connexion à MongoDB a réussi !'))
