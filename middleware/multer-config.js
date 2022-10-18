@@ -1,4 +1,4 @@
- /* Projet n°6 cours OpenClassrooms "go-fullstack"
+ /* Projet n°6 cours OpenClassrooms "PIIQUANTE"
 *  par Manuel MILLET le 05 octobre 2022 à 20h00
 *  fichier middleware/multer-config.js
 */
